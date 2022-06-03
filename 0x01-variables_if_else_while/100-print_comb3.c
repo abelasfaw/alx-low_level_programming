@@ -12,7 +12,7 @@ int main(void)
 	{
 		for (j = 0; j < 10 ; j++)
 		{
-			if (!(i > 0 && j == 0 || i == j || (i > 1 && j < i + 1)))
+			if (!(i > 0 && j == 0 || i == j || ((i > 1) && (j < i + 1))))
 			{
 				putchar(i % 10 + '0');
 				putchar(j % 10 + '0');
