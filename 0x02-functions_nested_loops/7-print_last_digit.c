@@ -10,6 +10,8 @@ int print_last_digit(int n)
 	signed int result;
 	if (n == INT_MIN){
 		result = 8;
+		_putchar(result + '0');
+		return (result);
 	}
 	else if (n < 0)
 	{
