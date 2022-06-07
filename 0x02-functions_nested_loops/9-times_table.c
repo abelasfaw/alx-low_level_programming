@@ -18,12 +18,20 @@ void times_table(void)
 			{
 				_putchar((result / 10) + '0');
 				_putchar((result % 10) + '0');
+				if (counter2 < 9)
+				{
+					_putchar(',');
+				}
 			}
 			else
 			{
 				_putchar(result + '0');
+				if(counter2 < 9)
+				{
+					_putchar(',');
+					_putchar(' ');
+				}
 			}
-			_putchar(',');
 			_putchar(' ');
 			counter2 += 1;
 		}
