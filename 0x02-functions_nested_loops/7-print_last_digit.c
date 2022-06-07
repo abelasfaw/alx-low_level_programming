@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 /**
  * print_last_digit- prints last digit of input
  * @n: input
@@ -7,8 +8,10 @@
 int print_last_digit(int n)
 {
 	signed int result;
-
-	if (n < 0)
+	if (n == INT_MIN){
+		result = 8;
+	}
+	else if (n < 0)
 	{
 		n = n * -1;
 	}
