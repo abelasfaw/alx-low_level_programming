@@ -1,4 +1,3 @@
-#include "main.h"
 /**
  * _abs- computes absolute value of a number
  * @n: input
@@ -11,6 +10,7 @@ int _abs(int n)
 		return (n);
 	}
 	else if (n < 0)
+
 	{
 		return (-n);
 	}
