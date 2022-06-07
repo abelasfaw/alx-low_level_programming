@@ -1,9 +1,9 @@
 #include<stdio.h>
+#include "main.h"
 /**
  * main-main function
  * Return: returns 0 on success
  */
-
 int main(void)
 {
 	char message[] = "_putchar";
@@ -11,9 +11,9 @@ int main(void)
 
 	while (counter < 8)
 	{
-		putchar(message[counter]);
+		_putchar(message[counter]);
 		counter += 1;
 	}
-	putchar('\n');
+	_putchar('\n');
 	return (0);
 }
