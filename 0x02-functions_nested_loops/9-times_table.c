@@ -21,14 +21,16 @@ void times_table(void)
 				if (counter2 < 9)
 				{
 					_putchar(',');
+					_putchar(' ');
 				}
 			}
 			else
 			{
 				_putchar(result + '0');
-				if(counter2 < 9)
+				if (counter2 < 9)
 				{
 					_putchar(',');
+					_putchar(' ');
 					_putchar(' ');
 				}
 			}
