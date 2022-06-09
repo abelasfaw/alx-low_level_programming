@@ -12,7 +12,7 @@ void more_numbers(void)
 	{
 		while (counter2 < 15)
 		{
-			if (counter2 > 10)
+			if (counter2 >= 10)
 			{
 				_putchar('1');
 			}
