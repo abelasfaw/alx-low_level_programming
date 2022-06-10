@@ -9,19 +9,27 @@ void print_triangle(int size)
 	if (size > 0)
 	{
 		int size_copy = size;
+		int i = 1;
+		int j = size_copy - 1;
+		int k = 0;
 
-		for (int i = 1; i <= size; i++)
+		while (i <= size)
 		{
-			for (int j = size_copy - 1; j > 0; j--)
+			while (j > 0)
 			{
 				_putchar(' ');
+				j -= 1;
 			}
-			for (int k = 0; k < i; k++)
+			while (k < i)
 			{
 				_putchar('#');
+				k += 1;
 			}
 			_putchar('\n');
 			size_copy -= 1;
+			j = size_copy - 1;
+			k = 0;
+			i += 1;
 		}
 	}
 	else
