@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * print_fizz_buzz- print number from 1-100, where multiples of 3 and 5 are
+ * main- print number from 1-100, where multiples of 3 and 5 are
  * replaced with fizz and buzz respectively
  * Return: void
  */
