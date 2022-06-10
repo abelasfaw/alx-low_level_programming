@@ -5,7 +5,7 @@
  * replaced with fizz and buzz respectively
  * Return: void
  */
-void print_fizz_buzz(void)
+int main(void)
 {
 	int n = 1;
 
@@ -30,4 +30,5 @@ void print_fizz_buzz(void)
 		n += 1;
 	}
 	printf("\n");
+	return (0);
 }
