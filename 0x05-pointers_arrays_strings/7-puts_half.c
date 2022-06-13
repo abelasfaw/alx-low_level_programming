@@ -32,16 +32,20 @@ void puts_half(char *str)
 	if (length % 2 == 0)
 	{
 		size = length / 2;
+		while (size < length)
+		{
+			_putchar(str[(size)]);
+			size += 1;
+		}
 	}
 	else
 	{
 		size = (length - 1) / 2;
-	}
-
-	while (size < length)
-	{
-		_putchar(str[(size)]);
-		size += 1;
+		while (size < length)
+		{
+			_putchar(str[(size + 1)]);
+			size += 1;
+		}
 	}
 	_putchar('\n');
 
