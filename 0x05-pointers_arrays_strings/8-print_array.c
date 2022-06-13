@@ -12,7 +12,16 @@ void print_array(int *a, int n)
 
 	while (counter < n)
 	{
-		printf("%d, ", a[counter]);
-		counter += 1;
+		if (counter != n - 1)
+		{
+			printf("%d, ", a[counter]);
+			counter += 1;
+		}
+		else
+		{
+			printf("%d", a[counter]);
+			counter += 1;
+		}
 	}
+	printf("\n")
 }
