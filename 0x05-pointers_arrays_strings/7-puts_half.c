@@ -38,10 +38,10 @@ void puts_half(char *str)
 		size = (length - 1) / 2;
 	}
 
-	while (i < size)
+	while (size <= length)
 	{
-		_putchar(str[i]);
-		i += 1;
+		_putchar(str[(size - 1)]);
+		size += 1;
 	}
 	_putchar('\n');
 
