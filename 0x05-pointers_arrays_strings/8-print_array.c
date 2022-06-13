@@ -23,5 +23,5 @@ void print_array(int *a, int n)
 			counter += 1;
 		}
 	}
-	printf("\n")
+	printf("\n");
 }
