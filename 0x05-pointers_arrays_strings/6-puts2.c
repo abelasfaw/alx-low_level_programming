@@ -13,7 +13,6 @@ void puts2(char *str)
 	while (ch != '\0')
 	{
 		_putchar(ch);
-		_putchar('\n');
 		if (str[counter + 1] != '\0')
 		{
 			if (str[counter + 2] != '\0')
@@ -32,5 +31,6 @@ void puts2(char *str)
 		}
 
 	}
+	_putchar('\n');
 
 }
