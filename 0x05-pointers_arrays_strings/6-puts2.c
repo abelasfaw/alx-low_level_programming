@@ -21,6 +21,10 @@ void puts2(char *str)
 				ch = str[counter + 2];
 				counter += 2;
 			}
+			else
+			{
+				break;
+			}
 		}
 		else
 		{
