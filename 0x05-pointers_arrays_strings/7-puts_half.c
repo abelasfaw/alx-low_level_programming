@@ -40,7 +40,7 @@ void puts_half(char *str)
 
 	while (size <= length)
 	{
-		_putchar(str[(size - 1)]);
+		_putchar(str[(size)]);
 		size += 1;
 	}
 	_putchar('\n');
