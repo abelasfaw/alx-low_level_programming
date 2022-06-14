@@ -7,7 +7,7 @@
  */
 int change_to_int (char c)
 {
-	unsigned iint result;
+	int result;
 
 	switch (c)
 	{
@@ -55,7 +55,7 @@ int _atoi(char *s)
 	int negative_counter = 0;
 	int counter = 1;
 	bool isFirst = true;
-	int result = 0;
+	unsigned int result = 0;
 	char ch;
 
 	ch = *s;
