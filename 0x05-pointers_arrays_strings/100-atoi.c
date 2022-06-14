@@ -7,7 +7,7 @@
  */
 int change_to_int (char c)
 {
-	int result;
+	unsigned iint result;
 
 	switch (c)
 	{
@@ -86,7 +86,7 @@ int _atoi(char *s)
 		counter += 1;
 	}
 
-	if (negative_counter > 0 && negative_counter > positive_counter)
+	if (negative_counter > 0 && negative_counter % 2 != 0)
 	{
 		result = result * -1;
 	}
