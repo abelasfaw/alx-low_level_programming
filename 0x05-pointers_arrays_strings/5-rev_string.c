@@ -28,7 +28,7 @@ int _strlen(char *a)
 void rev_string(char *s)
 {
 	int str_length = _strlen(s);
-	char reverse[str_length];
+	char reverse[_strlen(s)];
 	int index, counter, index2;
 
 	index = str_length - 2;
