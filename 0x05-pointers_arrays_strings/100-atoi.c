@@ -46,12 +46,11 @@ int change_to_int (char c)
 }
 /**
  *assign- assigns + or - sign
- *@positive_counter: number of positive signs
  *@negative_counter: number of negative signs
  *@result: result to assign
  *Return:int
  */
-int assign(int positive_counter, int negative_counter, unsigned int result)
+int assign(int negative_counter, unsigned int result)
 {
 	if (negative_counter > 0 && negative_counter % 2 != 0)
 	{
@@ -104,6 +103,6 @@ int _atoi(char *s)
 		ch = *(s + counter);
 		counter += 1;
 	}
-	result = assign(positive_counter, negative_counter, result);
+	result = assign(negative_counter, result);
 	return (result);
 }
