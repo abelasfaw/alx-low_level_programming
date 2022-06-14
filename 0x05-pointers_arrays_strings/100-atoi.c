@@ -45,37 +45,41 @@ int change_to_int (char c)
 	return (result);
 }
 /**
+ *assign- assigns + or - sign
+ *@positive_counter: number of positive signs
+ *@negative_counter: number of negative signs
+ *@result: result to assign
+ *Return:int
+ */
+int assign(int positive_counter, int negative_counter, unsigned int result)
+{
+	if (negative_counter > 0 && negative_counter % 2 != 0)
+	{
+		result = result * -1;
+	}
+	return (result);
+}
+/**
  * _atoi- converts string into integer
  * @s: string to be converted
  * Return: returns numbers in string, else returns 0
  */
 int _atoi(char *s)
 {
-	int positive_counter = 0;
-	int negative_counter = 0;
+	int positive_counter, negative_counter = 0;
 	int counter = 1;
 	bool isFirst = true;
 	unsigned int result = 0;
-	char ch;
-
-	ch = *s;
+	char ch = *s;
 
 	while (ch != '\0')
 	{
-		if (ch == '+')
+		if (ch == '+' && isFirst)
 		{
-			if (!isFirst)
-			{
-				break;
-			}
 			positive_counter += 1;
 		}
-		else if (ch == '-')
+		else if (ch == '-' && isFirst)
 		{
-			if (!isFirst)
-			{
-				break;
-			}
 			negative_counter += 1;
 		}
 		else if (ch >= 48 && ch <= 57)
@@ -100,10 +104,6 @@ int _atoi(char *s)
 		ch = *(s + counter);
 		counter += 1;
 	}
-
-	if (negative_counter > 0 && negative_counter % 2 != 0)
-	{
-		result = result * -1;
-	}
+	result = assign(positive_counter, negative_counter, result);
 	return (result);
 }
