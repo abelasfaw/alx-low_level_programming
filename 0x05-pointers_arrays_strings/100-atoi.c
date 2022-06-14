@@ -64,10 +64,18 @@ int _atoi(char *s)
 	{
 		if (ch == '+')
 		{
+			if (!isFirst)
+			{
+				break;
+			}
 			positive_counter += 1;
 		}
 		else if (ch == '-')
 		{
+			if (!isFirst)
+			{
+				break;
+			}
 			negative_counter += 1;
 		}
 		else if (ch >= 48 && ch <= 57)
@@ -80,6 +88,13 @@ int _atoi(char *s)
 			else
 			{
 				result = result * 10 + change_to_int(ch);
+			}
+		}
+		else
+		{
+			if (!isFirst)
+			{
+				break;
 			}
 		}
 		ch = *(s + counter);
