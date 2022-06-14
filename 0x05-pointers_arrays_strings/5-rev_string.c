@@ -18,7 +18,7 @@ int _strlen(char *a)
 		ch = *(a + counter);
 		counter += 1;
 	}
-	return (length + 1);
+	return (length);
 }
 /**
  * rev_string- reverses string
@@ -27,25 +27,15 @@ int _strlen(char *a)
  */
 void rev_string(char *s)
 {
+	char temp;
+	int counter = 0;
 	int str_length = _strlen(s);
-	char reverse[_strlen(s)];
-	int index, counter, index2;
 
-	index = str_length - 2;
-	index2 = 0;
-	counter = 0;
-
-	while (index >= 0)
+	while (counter < (str_length / 2))
 	{
-		reverse[counter] = *(s + index);
-		index -= 1;
+		temp = s[counter];
+		s[counter] = s[str_length - 1 - counter];
+		s[str_length - 1 - counter] = temp;
 		counter += 1;
-	}
-	reverse[str_length - 1] = '\0';
-
-	while (index2 < (_strlen(s) - 1))
-	{
-		*(s + index2) = *(reverse + index2);
-		index2 += 1;
 	}
 }
