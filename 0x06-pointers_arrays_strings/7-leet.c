@@ -11,7 +11,8 @@ char *leet(char *s)
 	char cipher[5][3] = {{'a', 'A', '4'}, {'e', 'E', '3'}, {'o', 'O', '0'},
 		{'t', 'T', '7'}, {'l', 'L', '1'}};
 
-	index1, index2 = 0;
+	index1 = 0;
+	index2 = 0;
 	ch = *s;
 
 	while (ch != '\0')
