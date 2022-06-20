@@ -8,24 +8,23 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int hay_index, needle_index, increment;
+	int hay_index, index, increment;
 	char ch, ch2;
 	bool matched = true;
 
 	hay_index = 0;
-	needle_index = 0;
+	index = 0;
 	increment = 1;
 	ch = *(haystack + hay_index);
-	ch2 = *(needle + needle_index);
+	ch2 = *(needle + index);
 
 	while (ch != '\0')
 	{
 		if (ch == ch2)
 		{
-			while (*(needle + needle_index + increment) != '\0')
+			while (*(needle + index + increment) != '\0')
 			{
-				if (*(needle + needle_index + increment) != *(haystack + hay_index + increm
-							ent))
+				if (*(needle + index + increment) != *(haystack + hay_index + increment))
 				{
 					matched = false;
 					break;
