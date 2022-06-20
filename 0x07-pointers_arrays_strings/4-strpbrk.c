@@ -31,8 +31,9 @@ int find_char(char *s, char c)
 int get_first_occurence(int *arr, int size)
 {
 	int min = arr[0];
+	int i;
 
-	for (int i = 1; i < size; i++)
+	for (i = 1; i < size; i++)
 	{
 		if (arr[i] < min)
 		{
@@ -52,21 +53,38 @@ char *_strpbrk(char *s, char *accept)
 {
 	int index = 0;
 	int size = 0;
-	int first_occurence;
+	int min_occurence;
 	char ch;
-	int *indexes;
 
 	ch = *(accept + index);
+	min_occurence = find_char(s, ch);
 
 	while (ch != '\0')
 	{
-		*(indexes + index) = find_char(s, ch);
+		if (index != 0)
+		{
+			if (min_occurence < 0 && find_char(s, ch) >= 0)
+			{
+				min_occurence = find_char(s, ch);
+			}
+			else if (min_occurence >= 0 && find_char(s, ch) < min_occurence)
+			{
+				min_occurence = find_char(s, ch);
+			}
+		}
 		size += 1;
 		index += 1;
 		ch = *(accept + index);
 	}
-	first_occurence = get_first_occurence(indexes, size);
-	return ((s + first_occurence));
+	if (min_occurence < 0)
+	{
+		printf("inside \n");
+		return (NULL);
+	}
+	else
+	{
+		return ((s + min_occurence));
+	}
 
 
 
