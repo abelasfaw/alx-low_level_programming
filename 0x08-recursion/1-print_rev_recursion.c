@@ -41,7 +41,6 @@ void print_recursive(char *s, int len)
  */
 void _print_rev_recursion(char *s)
 {
-	char ch;
 	int length;
 
 	length = _strlen(s, 0);
