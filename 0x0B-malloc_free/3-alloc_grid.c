@@ -53,6 +53,11 @@ int **alloc_grid(int width, int height)
 		if (int_ptr == NULL)
 		{
 			free(ptr);
+			while (success_count)
+			{
+				free(ptr[success_count - 1]);
+				success_count -= 1;
+			}
 			return (NULL);
 		}
 		ptr[row_counter] = int_ptr;
