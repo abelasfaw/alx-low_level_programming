@@ -32,6 +32,9 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 	}
 	ptr = malloc(sizeof(char) * size);
-	initialize_array(ptr, size, c);
+	if (ptr != NULL)
+	{
+		initialize_array(ptr, size, c);
+	}
 	return (ptr);
 }
