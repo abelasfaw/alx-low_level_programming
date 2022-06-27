@@ -49,6 +49,7 @@ int **alloc_grid(int width, int height)
 		int_ptr = malloc(sizeof(int) * width);
 		if (int_ptr == NULL)
 		{
+			free(ptr);
 			return (NULL);
 		}
 		ptr[row_counter] = int_ptr;
