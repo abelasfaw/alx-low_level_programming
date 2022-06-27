@@ -57,6 +57,7 @@ int **alloc_grid(int width, int height)
 		}
 		ptr[row_counter] = int_ptr;
 		free(int_ptr);
+		success_count += 1;
 	}
 	return (init_grid(ptr, height, width));
 }
