@@ -37,7 +37,7 @@ char **strtow(char *str)
 	char *word;
 	int access_index, start_index, end_index, first_char, words_count;
 
-	if (str == NULL || str == " " || !str)
+	if (str == NULL || !str)
 	{
 		return (NULL);
 	}
