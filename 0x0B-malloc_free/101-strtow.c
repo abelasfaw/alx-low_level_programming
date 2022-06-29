@@ -95,6 +95,10 @@ char **strtow(char *str)
 		access_index += 1;
 		ch = *(str + access_index);
 	}
+	if (access_index == 1 && *(str + 0) == ' ')
+	{
+		return (NULL);
+	}
 	*(words + words_count) = NULL;
 	return (words);
 }
