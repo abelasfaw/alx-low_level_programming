@@ -57,7 +57,6 @@ char **strtow(char *str)
 				start_index = access_index;
 				end_index = access_index;
 			}
-			prev = ch;
 			first_char = 0;
 
 		}
@@ -75,8 +74,6 @@ char **strtow(char *str)
 					*(words + words_count) = word;
 					words_count += 1;
 				}
-				prev = ch;
-
 			}
 			else
 			{
@@ -89,15 +86,20 @@ char **strtow(char *str)
 				{
 					end_index = access_index;
 				}
-				prev = ch;
 			}
 		}
 		access_index += 1;
+		prev = ch;
 		ch = *(str + access_index);
 	}
 	if (prev != ' ')
 	{
 		word = sub_str(str, start_index, end_index);
+		if (word == NULL)
+		{
+			return (NULL);
+		}
+		*(words + words_count) = word;
 		words_count += 1;
 	}
 	if (words_count == 0)
