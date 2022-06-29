@@ -95,6 +95,11 @@ char **strtow(char *str)
 		access_index += 1;
 		ch = *(str + access_index);
 	}
+	if (prev != ' ')
+	{
+		word = sub_str(str, start_index, end_index);
+		words_count += 1;
+	}
 	if (words_count == 0)
 	{
 		return (NULL);
