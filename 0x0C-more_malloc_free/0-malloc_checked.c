@@ -7,7 +7,6 @@
 void *malloc_checked(unsigned int b)
 {
 	void *ptr;
-	int *status;
 
 	/**check if allocation fails before using memory*/
 	ptr = malloc(b);
