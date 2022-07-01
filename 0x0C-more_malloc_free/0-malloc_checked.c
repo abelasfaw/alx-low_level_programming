@@ -12,6 +12,7 @@ void *malloc_checked(unsigned int b)
 	status = malloc(sizeof(int) * 2);
 	*(status + 0) = 9;
 	*(status +  1) = 8;
+	/**check if allocation fails before using memory*/
 	ptr = malloc(b);
 	if (ptr == NULL)
 	{
