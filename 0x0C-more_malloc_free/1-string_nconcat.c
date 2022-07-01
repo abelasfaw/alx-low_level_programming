@@ -97,7 +97,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	ptr = malloc((sizeof(char) * (str1_len + str2_len + 1)));
 	if (ptr != NULL)
 	{
-		return (_str_copy(s1, s2, n, ptr));
+		return (_str_copy(s1, s2, str2_len, ptr));
 	}
 	return (NULL);
 }
