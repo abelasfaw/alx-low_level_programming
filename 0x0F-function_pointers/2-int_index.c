@@ -23,11 +23,11 @@ int int_index(int *array, int size, int (*cmp)(int))
 				result = cmp(array[counter]);
 				if (result != 0)
 				{
-					return (result);
+					return (counter);
 				}
 			}
 			return (-1);
 		}
 	}
-	exit(98);
+	return (-1);
 }
