@@ -70,6 +70,10 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				str = va_arg(args, char *);
+				if (str == NULL)
+				{
+					printf("nil");
+				}
 				printf("%s", str);
 				print_separator(index, _str_len(format));
 				break;
