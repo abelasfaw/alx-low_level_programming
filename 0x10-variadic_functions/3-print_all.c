@@ -80,26 +80,25 @@ void print_all(const char * const format, ...)
 	va_start(args, format);
 	while (ch != '\0')
 	{
-		if (ch == 'c')
+		switch (ch)
 		{
-			printf("%c", va_arg(args, int));
-			print_separator(index, _str_len(format));
-		}
-		else if (ch == 'i')
-		{
-			printf("%d", va_arg(args, int));
-			print_separator(index, _str_len(format));
-		}
-		else if (ch == 'f')
-		{
-			printf("%f", va_arg(args, double));
-			print_separator(index, _str_len(format));
-		}
-		else if (ch == 's')
-		{
-			str = va_arg(args, char *);
-			print_string(str);
-			print_separator(index, _str_len(format));
+			case 'c':
+				printf("%c", va_arg(args, int));
+				print_separator(index, _str_len(format));
+				break;
+			case 'i':
+				printf("%d", va_arg(args, int));
+				print_separator(index, _str_len(format));
+				break;
+			case 'f':
+				printf("%f", va_arg(args, double));
+				print_separator(index, _str_len(format));
+				break;
+			case 's':
+				str = va_arg(args, char *);
+				printf("%s", str);
+				print_separator(index, _str_len(format));
+				break;
 		}
 		index += 1;
 		ch = *(format + index);
