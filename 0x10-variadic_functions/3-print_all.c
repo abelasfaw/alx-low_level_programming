@@ -46,9 +46,7 @@ void print_all(const char * const format, ...)
 	char ch;
 	va_list args;
 	char *str;
-	int index;
-
-	index = 0;
+	int index = 0;
 
 	ch = *(format + index);
 	va_start(args, format);
