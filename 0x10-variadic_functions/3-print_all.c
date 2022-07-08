@@ -24,32 +24,6 @@ int _str_len(const char * const str)
 	return (len);
 }
 /**
- * print_string - prints string input
- * @str: string to print
- * Return: void
- */
-void print_string(char *str)
-{
-	char ch;
-	int index;
-
-	index  = 0;
-	if (str == NULL)
-	{
-		printf("nil");
-	}
-	else
-	{
-		ch = *(str + index);
-		while (ch != '\0')
-		{
-			printf("%c", ch);
-			index += 1;
-			ch = *(str + index);
-		}
-	}
-}
-/**
  * print_separator- prints ", "
  * @index: current index of format string
  * @str_len: length of format string
