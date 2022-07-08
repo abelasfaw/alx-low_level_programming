@@ -73,6 +73,7 @@ void print_all(const char * const format, ...)
 				if (str == NULL)
 				{
 					printf("(nil)");
+					print_separator(index, _str_len(format));
 					break;
 				}
 				printf("%s", str);
