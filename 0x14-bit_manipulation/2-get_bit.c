@@ -68,7 +68,7 @@ char *convert_to_binary(unsigned long int n)
 	}
 	else
 	{
-		char binary[32];
+		char *binary = malloc(sizeof(char) * 33);
 		int index;
 
 		index = 0;
@@ -79,7 +79,7 @@ char *convert_to_binary(unsigned long int n)
 			index += 1;
 		}
 		binary[index] = '\0';
-		return (reverse_string(binary));
+		return (binary);
 
 	}
 	return (NULL);
@@ -95,7 +95,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned int len, result;
 	char *binary = convert_to_binary(n);
 
-	binary = reverse_string(binary);
+	/**binary = reverse_string(binary);**/
 	if (binary == NULL)
 	{
 		return (-1);
@@ -103,6 +103,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	len = _str_len(binary);
 	if (index >= len)
 	{
+		free(binary);
 		return (0);
 	}
 	if ((*(binary + index)) == 48)
@@ -117,7 +118,6 @@ int get_bit(unsigned long int n, unsigned int index)
 	{
 		result = -1;
 	}
+	free(binary);
 	return (result);
-
-
 }
