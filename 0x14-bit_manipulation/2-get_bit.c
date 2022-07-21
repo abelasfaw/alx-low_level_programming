@@ -101,13 +101,9 @@ int get_bit(unsigned long int n, unsigned int index)
 		return (-1);
 	}
 	len = _str_len(binary);
-	if (index > len)
+	if (index >= len)
 	{
 		return (0);
-	}
-	if (index < 0)
-	{
-		return (-1);
 	}
 	if ((*(binary + index)) == 48)
 	{
