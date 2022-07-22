@@ -101,11 +101,15 @@ int get_bit(unsigned long int n, unsigned int index)
 	{
 		return (-1);
 	}
+	if (index >= 64)
+	{
+		return (-1);
+	}
 	len = _str_len(binary);
 	if (index >= len)
 	{
 		free(binary);
-		return (-1);
+		return (0);
 	}
 	if ((*(binary + index)) == 48)
 	{
