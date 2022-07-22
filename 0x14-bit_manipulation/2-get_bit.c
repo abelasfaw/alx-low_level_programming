@@ -105,7 +105,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	if (index >= len)
 	{
 		free(binary);
-		return (0);
+		return (-1);
 	}
 	if ((*(binary + index)) == 48)
 	{
