@@ -68,7 +68,7 @@ char *convert_to_binary(unsigned long int n)
 	}
 	else
 	{
-		char *binary = malloc(sizeof(char) * 33);
+		char *binary = malloc(sizeof(char) * 65);
 		int index;
 
 		index = 0;
