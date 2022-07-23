@@ -22,36 +22,6 @@ int _str_len(char *str)
 	return (len);
 }
 /**
- * reverse_string- reverses string
- * @str: string to be processed
- * Return: reversed string
- */
-char *reverse_string(char *str)
-{
-	int len;
-
-	len = _str_len(str);
-	if (len == 0)
-	{
-		return (NULL);
-	}
-	else
-	{
-		char *reversed = malloc((sizeof(char)) * (len + 1));
-		int index = len - 1;
-		int reverse_index = 0;
-
-		while (index >= 0)
-		{
-			*(reversed + reverse_index) = *(str + index);
-			index -= 1;
-			reverse_index += 1;
-		}
-		*(reversed + reverse_index) = '\0';
-		return (reversed);
-	}
-}
-/**
  * convert_to_binary- converts decimal number to binary representation
  * @n: number to be converted
  * Return: binary format
@@ -184,7 +154,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 	/*binary = reverse_string(binary);*/
 	if (index > (len - 1))
 	{
-		unsigned int counter = len - 1;
+		unsigned int counter = len;
 
 		while (counter <= index)
 		{
