@@ -52,6 +52,10 @@ int copy_file(const char *file_from, const char *file_to)
 			exit(99);
 		}
 		content_read = read(fd, content_buffer, 1024);
+		if (content_read < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from);
+		}
 		while (content_read == 1024)
 		{
 			content_written = write(fd2, content_buffer, content_read);
