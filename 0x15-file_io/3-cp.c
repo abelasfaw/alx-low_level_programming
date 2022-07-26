@@ -12,7 +12,7 @@ int copy_file(const char *file_from, const char *file_to)
 {
 	int fd, fd2, status, status2;
 	char *content_buffer;
-	size_t content_read, content_written;
+	int content_read, content_written;
 
 	fd = open(file_from,O_RDONLY);
 	if (fd == -1)
@@ -28,7 +28,7 @@ int copy_file(const char *file_from, const char *file_to)
 	}
 	content_buffer = malloc(sizeof(char) * 1024);
 	content_read = read(fd, content_buffer, 1024);
-	if (content_read <= 0)
+	if (content_read < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
@@ -46,7 +46,7 @@ int copy_file(const char *file_from, const char *file_to)
 	else
 	{
 		content_written = write(fd2, content_buffer, content_read);
-		if (content_written <= 0)
+		if (content_written < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			exit(99);
@@ -55,7 +55,7 @@ int copy_file(const char *file_from, const char *file_to)
 		while (content_read == 1024)
 		{
 			content_written = write(fd2, content_buffer, content_read);
-			if (content_written <= 0)
+			if (content_written < 0)
 			{
 				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 				exit(99);
