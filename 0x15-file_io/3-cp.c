@@ -34,7 +34,7 @@ int copy_file(const char *file_from, const char *file_to)
 		exit(98);
 	}
 
-	else if (content_read < 1024 && content_read > 0)
+	else if (content_read < 1024 && content_read >= 0)
 	{
 		content_written = write(fd2, content_buffer, content_read);
 		if (content_written <= 0)
@@ -55,8 +55,37 @@ int copy_file(const char *file_from, const char *file_to)
 		if (content_read < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from);
+			exit(98);
 		}
-		while (content_read == 1024)
+		if (content_read == 1024)
+		{
+			while (content_read == 1024)
+			{
+				content_written = write(fd2, content_buffer, content_read);
+				if (content_written < 0)
+				{
+					dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+					exit(99);
+				}
+				content_read = read(fd, content_buffer, 1024);
+				if (content_read < 0)
+				{
+					dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from);
+					exit(98);
+				}
+				if (content_read < 1024)
+				{
+					content_written = write(fd2, content_buffer, content_read);
+					if (content_written < 0)
+					{
+						dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+						exit(99);
+					}
+					break;
+				}
+			}
+		}
+		else
 		{
 			content_written = write(fd2, content_buffer, content_read);
 			if (content_written < 0)
@@ -64,7 +93,6 @@ int copy_file(const char *file_from, const char *file_to)
 				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 				exit(99);
 			}
-			content_read = read(fd, content_buffer, 1024);
 		}
 	}
 	free(content_buffer);
