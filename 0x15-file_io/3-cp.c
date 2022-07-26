@@ -14,7 +14,7 @@ int copy_file(const char *file_from, const char *file_to)
 	char *content_buffer;
 	int content_read, content_written;
 
-	fd = open(file_from,O_RDONLY);
+	fd = open(file_from, O_RDONLY);
 	if (fd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
